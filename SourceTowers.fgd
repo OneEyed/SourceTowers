@@ -1,0 +1,45 @@
+//===================== Source Towers: Source FDG File Info ======================
+//
+// Purpose: Definition file for Source Towers (.fgd)
+// Version: 1.0
+//
+//============================================================================
+
+// Include default .fgd for original info
+@include "base.fgd"
+@include "halflife2.fgd"
+@include "sdk.fgd"
+
+//============================================================================
+//
+// Start of Custom information
+//
+//============================================================================
+
+@PointClass color(200 50 0)  size(-40 -40 -40, 40 40 40) = towers_move : 
+	"Waypoint position for enemy to move to." 
+[
+	pos(integer) : "Waypoint position" : 1 : "Waypoint position."
+]
+
+
+@PointClass color(50 200 0)  size(-40 -40 -40, 40 40 40) = towers_spawn : 
+	"Enemy mobs spawn at this location." 
+[
+]
+
+
+@SolidClass base(BreakableBrush, RenderFields) = towers_castle : 
+	"Castle brush entity, breaks after being hit by enemy amount of Health times." 
+[
+]
+
+@SolidClass base(Origin) = towers_nobuild : 
+	"A brush entity that blocks building in the area defined." 
+[
+]
+
+@SolidClass base(Origin) = towers_path : 
+	"A brush entity representing the no building path of where enemy is going." 
+[
+]
